@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeWithTechDev - Premium Digital Products & Projects</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-brand">
+                <div class="logo">
+                    <i class="fas fa-code"></i>
+                    <h1>CodeWithTechDev</h1>
+                </div>
+            </div>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="#categories">Categories</a>
+                <a href="#contact">Contact</a>
+                <a href="cart.html" id="cart-link">
+                    <i class="fas fa-shopping-cart"></i>
+                    Cart (<span id="cart-count">0</span>)
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>🚀 Premium Digital Products & Code Projects</h1>
+                <p class="hero-subtitle">Get ready-to-use HTML/CSS/JS projects, Python scripts, and Open Source templates</p>
+                <p class="hero-description">Download instantly • Professional quality • Regular updates • Full source code included</p>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number">500+</span>
+                        <span class="stat-label">Projects</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">10K+</span>
+                        <span class="stat-label">Downloads</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">4.9★</span>
+                        <span class="stat-label">Rating</span>
+                    </div>
+                </div>
+                <a href="#categories" class="btn-primary">Explore Projects</a>
+            </div>
+        </section>
+
+        <!-- Categories Section -->
+        <section id="categories" class="categories-section">
+            <!-- Categories will be loaded dynamically -->
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact-section">
+            <div class="contact-container">
+                <h2>💼 Need Custom Development?</h2>
+                <p class="contact-subtitle">We can build custom solutions tailored to your specific needs</p>
+                
+                <div class="contact-info">
+                    <div class="contact-method">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h3>Email Us</h3>
+                            <p>codewithtechdev@gmail.com</p>
+                            <a href="mailto:codewithtechdev@gmail.com" class="contact-link">Send Message</a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-method">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h3>Response Time</h3>
+                            <p>Within 24 hours</p>
+                            <span class="contact-note">We're here to help!</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="social-links">
+                    <h3>Connect With Us</h3>
+                    <div class="social-icons">
+                        <a href="https://www.youtube.com/@CodeWithTechDev" target="_blank" class="social-link youtube">
+                            <i class="fab fa-youtube"></i>
+                            YouTube
+                        </a>
+                        <a href="https://www.facebook.com/CodeWithTechDev" target="_blank" class="social-link facebook">
+                            <i class="fab fa-facebook"></i>
+                            Facebook
+                        </a>
+                        <a href="https://github.com/CodeWithTechDev" target="_blank" class="social-link github">
+                            <i class="fab fa-github"></i>
+                            GitHub
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <div class="footer-logo">
+                    <i class="fas fa-code"></i>
+                    <h3>CodeWithTechDev</h3>
+                </div>
+                <p>Premium digital products and code projects for developers and businesses.</p>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Categories</h4>
+                <ul>
+                    <li><a href="#html-css-js">HTML/CSS/JS Projects</a></li>
+                    <li><a href="#python">Python Projects</a></li>
+                    <li><a href="#opensource">Open Source Projects</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="#contact">Contact Us</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#docs">Documentation</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="#privacy">Privacy Policy</a></li>
+                    <li><a href="#terms">Terms of Service</a></li>
+                    <li><a href="#refund">Refund Policy</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2023 CodeWithTechDev. All rights reserved. | Built with ❤️ for developers</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="assets/js/supabase-client.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - DigitalStore</title>
+    <link rel="stylesheet" href="/assets/css/admin.css">
+</head>
+<body>
+    <div class="admin-container">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h2>DigitalStore Admin</h2>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="/dashboard.html" class="nav-item">Dashboard</a>
+                <a href="/products.html" class="nav-item active">Products</a>
+                <a href="#" class="nav-item">Orders</a>
+                <a href="#" class="nav-item">Customers</a>
+            </nav>
+        </aside>
+
+        <main class="admin-main">
+            <header class="admin-header">
+                <h1>Admin Dashboard</h1>
+                <div class="admin-actions">
+                    <button id="logout-btn" class="btn-secondary">Logout</button>
+                </div>
+            </header>
+
+            <div class="admin-content">
+                <div class="dashboard-cards">
+                    <div class="card">
+                        <h3>Total Products</h3>
+                        <p id="total-products">0</p>
+                    </div>
+                    <div class="card">
+                        <h3>Total Orders</h3>
+                        <p id="total-orders">0</p>
+                    </div>
+                    <div class="card">
+                        <h3>Revenue</h3>
+                        <p id="total-revenue">$0.00</p>
+                    </div>
+                </div>
+                
+                <div class="recent-orders">
+                    <h2>Recent Orders</h2>
+                    <div id="orders-list">
+                        <!-- Orders will be loaded dynamically -->
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="/assets/js/supabase-client.js"></script>
+    <script src="/assets/js/admin.js"></script>
+</body>
+</html>

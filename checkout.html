@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - DigitalStore</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- Verifone Payment JS -->
+    <script src="https://api.verifone.com/checkout/v2/checkout.js"></script>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-brand">
+                <h1>DigitalStore</h1>
+            </div>
+            <div class="nav-links">
+                <a href="index.html">Products</a>
+                <a href="cart.html" id="cart-link">Cart (<span id="cart-count">0</span>)</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        <h1>Checkout</h1>
+        <div class="checkout-container">
+            <div class="order-summary">
+                <h3>Order Summary</h3>
+                <div id="checkout-items">
+                    <!-- Checkout items will be loaded dynamically -->
+                </div>
+                <div class="order-total">
+                    <h3>Total: $<span id="checkout-total">0.00</span></h3>
+                </div>
+            </div>
+            
+            <div class="customer-info">
+                <h3>Customer Information</h3>
+                <form id="customer-form">
+                    <div class="form-group">
+                        <label for="customer-name">Full Name *</label>
+                        <input type="text" id="customer-name" name="customer-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="customer-email">Email Address *</label>
+                        <input type="email" id="customer-email" name="customer-email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="customer-phone">Phone Number</label>
+                        <input type="tel" id="customer-phone" name="customer-phone">
+                    </div>
+                </form>
+                
+                <div class="payment-options">
+                    <h3>Payment Method</h3>
+                    <button id="verifone-pay-btn" class="btn-primary verifone-pay-btn">
+                        Pay with Verifone
+                    </button>
+                    <div class="payment-security">
+                        <p>🔒 Secure payment processed by Verifone</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Verifone Payment Modal -->
+        <div id="verifone-modal" class="modal hidden">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>Complete Your Payment</h2>
+                    <span class="close">&times;</span>
+                </div>
+                <div class="modal-body">
+                    <div id="verifone-checkout-container">
+                        <!-- Verifone payment form will be loaded here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Payment Success Section -->
+        <div id="payment-success" class="payment-success hidden">
+            <div class="success-icon">✅</div>
+            <h2>Payment Successful!</h2>
+            <p>Thank you for your purchase. Your order has been processed successfully.</p>
+            <div class="order-details">
+                <p><strong>Order ID:</strong> <span id="order-id"></span></p>
+                <p><strong>Transaction ID:</strong> <span id="transaction-id"></span></p>
+                <p><strong>Amount Paid:</strong> $<span id="amount-paid"></span></p>
+            </div>
+            <div id="download-links">
+                <!-- Download links will be populated here -->
+            </div>
+            <div class="success-actions">
+                <a href="index.html" class="btn-primary">Continue Shopping</a>
+                <button id="print-receipt" class="btn-secondary">Print Receipt</button>
+            </div>
+        </div>
+        
+        <!-- Payment Failed Section -->
+        <div id="payment-failed" class="payment-failed hidden">
+            <div class="error-icon">❌</div>
+            <h2>Payment Failed</h2>
+            <p id="error-message">There was an issue processing your payment. Please try again.</p>
+            <div class="error-actions">
+                <button id="retry-payment" class="btn-primary">Try Again</button>
+                <a href="cart.html" class="btn-secondary">Return to Cart</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 DigitalStore. All rights reserved.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="assets/js/supabase-client.js"></script>
+    <script src="assets/js/checkout.js"></script>
+</body>
+</html>

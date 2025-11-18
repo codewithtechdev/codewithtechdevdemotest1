@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Products - DigitalStore Admin</title>
+    <link rel="stylesheet" href="/assets/css/admin.css">
+</head>
+<body>
+    <div class="admin-container">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h2>DigitalStore Admin</h2>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="dashboard.html" class="nav-item">Dashboard</a>
+                <a href="products.html" class="nav-item active">Products</a>
+                <a href="#" class="nav-item">Orders</a>
+            </nav>
+        </aside>
+
+        <main class="admin-main">
+            <header class="admin-header">
+                <h1>Manage Products</h1>
+                <div class="admin-actions">
+                    <button id="add-product-btn" class="btn-primary">Add New Product</button>
+                    <button id="logout-btn" class="btn-secondary">Logout</button>
+                </div>
+            </header>
+
+            <div class="admin-content">
+                <div id="admin-message" style="display: none; padding: 10px; margin-bottom: 15px; border-radius: 4px;"></div>
+                
+                <div class="products-table-container">
+                    <table class="products-table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Price</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="products-table-body">
+                            <tr>
+                                <td colspan="5" style="text-align: center;">Loading products...</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+    </div>
+
+<!-- Updated Product Modal Form -->
+<form id="product-form">
+    <input type="hidden" id="product-id">
+    
+    <div class="form-row">
+        <div class="form-group">
+            <label for="product-name">Product Name *</label>
+            <input type="text" id="product-name" required>
+        </div>
+        <div class="form-group">
+            <label for="product-status">Status</label>
+            <select id="product-status">
+                <option value="active">Active</option>
+                <option value="inactive">Inactive</option>
+            </select>
+        </div>
+    </div>
+    
+    <div class="form-group">
+        <label for="product-description">Description *</label>
+        <textarea id="product-description" rows="4" required placeholder="Describe your project..."></textarea>
+    </div>
+    
+    <div class="form-row">
+        <div class="form-group">
+            <label for="main-category">Main Category *</label>
+            <select id="main-category" required>
+                <option value="">Select Category</option>
+                <option value="html-css-js">HTML/CSS/JS Projects</option>
+                <option value="python">Python Projects</option>
+                <option value="opensource">Open Source Projects</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="subcategory">Subcategory *</label>
+            <select id="subcategory" required>
+                <option value="">Select Subcategory</option>
+            <!-- Subcategories will be populated by JavaScript -->
+            </select>
+        </div>
+    </div>
+    
+    <div class="form-group">
+        <label for="product-images">Product Images (URLs, one per line) *</label>
+        <textarea id="product-images" rows="3" required placeholder="https://example.com/image1.jpg&#10;https://example.com/image2.jpg"></textarea>
+        <small>Enter one image URL per line. First image will be the main thumbnail.</small>
+    </div>
+    
+    <div class="form-group">
+        <label for="product-file">Download File URL *</label>
+        <input type="text" id="product-file" required placeholder="https://example.com/project.zip">
+    </div>
+    
+    <div class="form-group">
+        <label for="live-demo-url">Live Demo URL (Optional)</label>
+        <input type="text" id="live-demo-url" placeholder="https://example.com/demo">
+    </div>
+    
+    <div class="form-row">
+        <div class="form-group">
+            <label for="product-price">Price ($)</label>
+            <input type="number" id="product-price" step="0.01" min="0" value="0">
+            <small>Set to 0 for free products</small>
+        </div>
+        <div class="form-group">
+            <label class="checkbox-label">
+                <input type="checkbox" id="is-opensource">
+                This is an Open Source Project (Free)
+            </label>
+        </div>
+    </div>
+    
+    <div class="form-actions">
+        <button type="submit" class="btn-primary">Save Product</button>
+        <button type="button" class="btn-secondary" id="cancel-btn">Cancel</button>
+    </div>
+</form>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="/assets/js/supabase-client.js"></script>
+    <script src="/assets/js/admin.js"></script>
+</body>
+</html>

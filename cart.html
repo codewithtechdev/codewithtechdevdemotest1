@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart - DigitalStore</title>
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-brand">
+                <h1>DigitalStore</h1>
+            </div>
+            <div class="nav-links">
+                <a href="/index.html">Products</a>
+                <a href="/cart.html" id="cart-link">Cart (<span id="cart-count">0</span>)</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        <h1>Your Shopping Cart</h1>
+        <div id="cart-items" class="cart-items">
+            <!-- Cart items will be loaded dynamically -->
+        </div>
+        <div class="cart-summary">
+            <h3>Total: $<span id="cart-total">0.00</span></h3>
+            <button id="checkout-btn" class="btn-primary">Proceed to Checkout</button>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 DigitalStore. All rights reserved.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="/assets/js/supabase-client.js"></script>
+    <script src="/assets/js/cart.js"></script>
+</body>
+</html>
